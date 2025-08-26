@@ -16,12 +16,22 @@ export default function HeroSection() {
   }, [images.length]);
 
   return (
-    <section
-  className="relative h-[100vh] w-screen overflow-hidden flex items-center justify-center bg-cover bg-center transition-all duration-700"
-  style={{ backgroundImage: `url(${images[currentIndex]})` }}>
+    <section className="relative h-[100vh] w-screen overflow-x-hidden flex items-center justify-center">
+      {/* Background Slider */}
+      {images.map((img, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ backgroundImage: `url(${img})` }}
+        ></div>
+      ))}
 
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
+      {/* Content */}
       <div className="relative z-10 text-center text-white max-w-2xl px-6">
         <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-snug">
           Express Laundry Delivery Service di Solo Baru

@@ -19,8 +19,6 @@ export default function Navbar() {
 
           {/* ================== MENU DESKTOP & TABLET ================== */}
           <div className="hidden md:flex space-x-8"> 
-            {/* hidden → disembunyikan default (untuk mobile) 
-                md:flex → tampil flex mulai dari tablet (≥768px) sampai desktop */}
             <a href="#home" className="text-white text-xl hover:text-blue-400">
               Beranda
             </a>
@@ -35,10 +33,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Tombol "Pesan Sekarang" → juga khusus tablet & desktop */}
           <div className="hidden md:flex">
-            {/* hidden → disembunyikan di mobile
-                md:flex → baru tampil di tablet dan desktop */}
             <a
               href="#order"
               className="bg-blue-600 text-white text-xl px-4 py-2 rounded-md hover:bg-blue-700 transition"
@@ -49,13 +44,11 @@ export default function Navbar() {
 
           {/* ================== MENU ☰ ================== */}
           <div className="md:hidden flex items-center">
-            {/* md:hidden → tombol hanya tampil di mobile (<768px)*/}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="absolute top-4 right-4 text-white hover:text-gray-200"
             >
               {isOpen ? (
-                // Icon "X" (close) 
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -70,7 +63,6 @@ export default function Navbar() {
                   />
                 </svg>
               ) : (
-                // Icon ☰
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -94,14 +86,12 @@ export default function Navbar() {
   {isOpen && (
   <div className="md:hidden fixed top-0 left-0 w-full h-1/3,5 bg-blue-400 shadow-lg px-4 py-6 space-y-4 z-50 transition-all duration-300 ease-in-out">
     
-    {/* Tombol Close di dalam Navbar */}
     <div className="flex justify-end">
       <button onClick={() => setIsOpen(false)} className="text-white text-2xl">
         ✕
       </button>
     </div>
 
-    {/* Link Menu */}
     <a href="#home" className="block text-white text-xl hover:text-gray-200">
       Beranda
     </a>
